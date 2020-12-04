@@ -1,0 +1,91 @@
+# LAB 01: Install Linkerd
+
+## Description
+
+In this lab we will deploy a demo application and explore Linkerd 
+
+## Instructions
+
+1. We can access the dashboard using the Linkerd CLI
+
+```
+linkerd dashboard &
+```
+
+Note: Since we are working through the workstation we cannot directly access the dashboard (however you can test the access using curl)
+
+2. Let's expose the dashboard service to allow access from everywhere
+
+```
+kubectl patch svc linkerd-web -p '{"spec": {"type": "LoadBalancer"}}' -n linkerd
+```
+
+3. Wait until the load balancer service receives the external IP
+
+```
+kubectl get svc linkerd-web -n linkerd --watch
+```
+
+4. Browse to the dashboard from your browser
+
+```
+https://<service-external-ip>:8084
+```
+
+Note: To prevent DNS-rebinding attacks, the dashboard rejects any request whose Host header is not localhost, 127.0.0.1 or the service name linkerd-web.linkerd.svc
+
+5. Let's disable the security mechanism for accessing the dashboard (not recommended)
+
+```
+kubectl edit deploy linkerd-web -n linkerd
+```
+```
+--> Update the "-enforced-host" parameter to an empty string
+
+Replace: - -enforced-host=^(localhost|127\.0\.0\.1|linkerd-web\.linkerd\.svc\.cluster\.local|linkerd-web\.linkerd\.svc|\[::1\])(:\d+)?$
+With: - -enforced-host=
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkerd-web
+spec:
+  template:
+    spec:
+      containers:
+        - name: web
+          args:
+            - -api-addr=linkerd-controller-api.linkerd.svc.cluster.local:8085
+            - -grafana-addr=linkerd-grafana.linkerd.svc.cluster.local:3000
+            - -controller-namespace=linkerd
+            - -log-level=info
+            - -enforced-host=
+```
+
+4. Browse to the dashboard again (the rolling update may take a few seconds to complete)
+
+```
+https://<service-external-ip>:8084
+```
+
+5. Install the app (not meshed)
+
+```
+curl -sL https://run.linkerd.io/emojivoto.yml \
+  | kubectl apply -f -
+```
+
+6. Expose the application service and browse to it
+
+```
+kubectl patch svc web-svc -p '{"spec": {"type": "LoadBalancer"}}' -n emojivoto
+```
+
+3. Wait until the load balancer service receives the external IP and browse to the application
+
+```
+kubectl get svc web-svc -n emojivoto --watch
+```
+```
+https://<service-external-ip>:8084
+```
