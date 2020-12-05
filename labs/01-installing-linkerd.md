@@ -12,11 +12,15 @@ In this lab we will install Linkerd 2.x into a GKE cluster
 ssh sela@<your-ip>
 ```
 
+---
+
 2. Let's install kubectl in the workstation server
 
 ```
 sudo snap install kubectl --classic
 ```
+
+---
 
 3. Let's use gcloud CLI to configure kubectl and get access to the cluster
 
@@ -24,11 +28,15 @@ sudo snap install kubectl --classic
 gcloud container clusters get-credentials $(hostname) --zone $(gcloud compute instances list $(hostname) --format "value(zone)") --project devops-course-architecture
 ```
 
+---
+
 4. Test the kubectl configuration by running the following command
 
 ```
 kubectl get nodes
 ```
+
+---
 
 5. Install the linkerd CLI
 
@@ -36,11 +44,15 @@ kubectl get nodes
 curl -sL https://run.linkerd.io/install | sh
 ```
 
+---
+
 6. Add linkerd to your path with
 
 ```
 export PATH=$PATH:$HOME/.linkerd2/bin
 ```
+
+---
 
 7. Verify the CLI is running correctly with the command below (you should see the CLI version, and also Server version: unavailable. This is because you haven't installed the control plane on your cluster. Don't worry, you'll be installing the control plane soon)
 
@@ -48,11 +60,15 @@ export PATH=$PATH:$HOME/.linkerd2/bin
 linkerd version
 ```
 
+---
+
 8. Validate your kubernetes clusters
 
 ```
 linkerd check --pre
 ```
+
+---
 
 9. Install Linkerd onto the cluster
 
@@ -60,11 +76,15 @@ linkerd check --pre
 linkerd install | kubectl apply -f -
 ```
 
+---
+
 10. Verify the installation
 
 ```
 linkerd check
 ```
+
+---
 
 11. Grant permissions for the linkerd tap role
 
@@ -74,6 +94,8 @@ kubectl create clusterrolebinding \
   --clusterrole=linkerd-linkerd-tap-admin \
   --user=$(gcloud config get-value account)
 ```
+
+---
 
 12. Finally, let's see what has been installed
 

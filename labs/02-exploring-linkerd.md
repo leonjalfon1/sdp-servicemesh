@@ -12,7 +12,9 @@ In this lab we will deploy a demo application and explore Linkerd
 linkerd dashboard &
 ```
 
-Note: Since we are working through the workstation we cannot directly access the dashboard (however you can test the access using curl)
+- Note: Since we are working through the workstation we cannot directly access the dashboard (however you can test the access using curl)
+
+---
 
 2. Let's expose the dashboard service to allow access from everywhere
 
@@ -20,11 +22,15 @@ Note: Since we are working through the workstation we cannot directly access the
 kubectl patch svc linkerd-web -p '{"spec": {"type": "LoadBalancer"}}' -n linkerd
 ```
 
+---
+
 3. Wait until the load balancer service receives the external IP
 
 ```
 kubectl get svc linkerd-web -n linkerd --watch
 ```
+
+---
 
 4. Browse to the dashboard from your browser
 
@@ -32,7 +38,9 @@ kubectl get svc linkerd-web -n linkerd --watch
 https://<service-external-ip>:8084
 ```
 
-Note: To prevent DNS-rebinding attacks, the dashboard rejects any request whose Host header is not localhost, 127.0.0.1 or the service name linkerd-web.linkerd.svc
+- Note: To prevent DNS-rebinding attacks, the dashboard rejects any request whose Host header is not localhost, 127.0.0.1 or the service name linkerd-web.linkerd.svc
+
+---
 
 5. Let's disable the security mechanism for accessing the dashboard (not recommended)
 
@@ -62,11 +70,15 @@ spec:
             - -enforced-host=
 ```
 
+---
+
 4. Browse to the dashboard again (the rolling update may take a few seconds to complete)
 
 ```
 https://<service-external-ip>:8084
 ```
+
+---
 
 5. Install the app (not meshed)
 
@@ -74,14 +86,17 @@ https://<service-external-ip>:8084
 kubectl apply -f https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/emojivoto-app.yaml
 ```
 
+---
+
 6. Before add Linkerd to the emojivoto app, let's ispect the configuration of the web service pod
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml
 ```
 
-Note: Currently it have a pod with a single container
+- Note: Currently it have a pod with a single container
 
+---
 
 7. Let's add Linkerd to emojivoto by running
 
@@ -91,20 +106,25 @@ kubectl get -n emojivoto deploy -o yaml \
   | kubectl apply -f -
 ```
 
+---
+
 8. Then, let's ispect the configuration of the web service again
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml
 ```
 
-Note: The linkerd sidecar was injected
+- Note: The linkerd sidecar was injected
 
+---
 
 9. Use the following command to ensure that everything worked the way it should with the data plane
 
 ```
 linkerd -n emojivoto check --proxy
 ```
+
+---
 
 10. Retrieve the external IP of the emojivoto web service and browse to see the applciation 
 
@@ -115,8 +135,9 @@ kubectl get svc web-svc -n emojivoto
 https://<service-external-ip>:80
 ```
 
-Note: Clicking around, you might notice that some parts of emojivoto are broken! (intentionally) For example, if you click on a doughnut emoji, you'll get a 404 page
+- Note: Clicking around, you might notice that some parts of emojivoto are broken! (intentionally) For example, if you click on a doughnut emoji, you'll get a 404 page
 
+---
 
 11. Since the demo app comes with a load generator, we can see live traffic metrics by running
 
@@ -124,8 +145,9 @@ Note: Clicking around, you might notice that some parts of emojivoto are broken!
 linkerd -n emojivoto stat deploy
 ```
 
-Note: This will show the “golden” metrics for each deployment (Success rates, Request rates and Latency distribution percentiles)
+- Note: This will show the “golden” metrics for each deployment (Success rates, Request rates and Latency distribution percentiles)
 
+---
 
 12. Also we can use top to get a real-time view of which paths are being called
 
@@ -133,11 +155,15 @@ Note: This will show the “golden” metrics for each deployment (Success rates
 linkerd -n emojivoto top deploy --as $(gcloud config get-value account)
 ```
 
+---
+
 13. To go even deeper, we can use tap shows the stream of requests across a single pod, deployment, or even everything in the emojivoto namespace
 
 ```
 linkerd -n emojivoto tap deploy/web --as $(gcloud config get-value account)
 ```
+
+---
 
 14. Retrieve the linkerd dashboard external IP and browse to the emojivoto namespace to see the application details 
 
@@ -148,6 +174,6 @@ kubectl get svc linkerd-web -n linkerd
 https://<service-external-ip>:8084
 ```
 
-Note: All the above functionality is also available in the dashboard
+- Note: All the above functionality is also available in the dashboard
 
-Note: You can see some pre-configured dashboards by clicking the Grafana icon in the overview page
+- Note: You can see some pre-configured dashboards by clicking the Grafana icon in the overview page
