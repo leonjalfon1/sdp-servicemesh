@@ -49,7 +49,8 @@ curl -sL https://run.linkerd.io/install | sh
 6. Add linkerd to your path with
 
 ```
-export PATH=$PATH:$HOME/.linkerd2/bin
+echo 'export PATH=$PATH:$HOME/.linkerd2/bin' >> ${HOME}/.bash_profile
+source ${HOME}/.bash_profile
 ```
 
 ---
