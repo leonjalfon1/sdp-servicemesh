@@ -126,7 +126,7 @@ linkerd -n emojivoto check --proxy
 
 ---
 
-10. Retrieve the external IP of the emojivoto web service and browse to see the applciation 
+10. Retrieve the external IP of the emojivoto web service and browse it to see the application 
 
 ```
 kubectl get svc web-svc -n emojivoto
