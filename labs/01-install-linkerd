@@ -66,7 +66,16 @@ linkerd install | kubectl apply -f -
 linkerd check
 ```
 
-11. Finally, let's see what has been installed
+11. Grant permissions for the linkerd tap role
+
+```
+kubectl create clusterrolebinding \
+  $(whoami)-tap-admin \
+  --clusterrole=linkerd-linkerd-tap-admin \
+  --user=$(gcloud config get-value account)
+```
+
+12. Finally, let's see what has been installed
 
 ```
 kubectl -n linkerd get all
