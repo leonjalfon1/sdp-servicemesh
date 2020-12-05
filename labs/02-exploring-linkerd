@@ -1,4 +1,4 @@
-# LAB 01: Install Linkerd
+# LAB 02: Exploring Linkerd
 
 ## Description
 
@@ -74,7 +74,7 @@ https://<service-external-ip>:8084
 kubectl apply -f https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/emojivoto-app.yaml
 ```
 
-6. Before add Linkerd to the emojivoto app, let's ispect the configuration of the web deployment pod
+6. Before add Linkerd to the emojivoto app, let's ispect the configuration of the web service pod
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml
@@ -91,7 +91,7 @@ kubectl get -n emojivoto deploy -o yaml \
   | kubectl apply -f -
 ```
 
-8. Then, let's ispect the configuration of the web deployment again
+8. Then, let's ispect the configuration of the web service again
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml
