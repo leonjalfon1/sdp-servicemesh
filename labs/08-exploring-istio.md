@@ -249,6 +249,6 @@ http://<tracing-external-ip>:80
 
 - Note: The trace is comprised of a set of spans, where each span corresponds to a Bookinfo service, invoked during the execution of a /productpage request, or internal Istio component, for example: istio-ingressgateway.
 
-- Note: If you wish it's possible to use Zipkin instead of jaeger
+- Note: If you wish it's possible to use Zipkin instead of Jaeger
 
 - Note: You can configure Istio to collect trace spans and send them to Lightstep
