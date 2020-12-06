@@ -38,7 +38,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab11-img01.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab11-img01.png" width="80%" height="60%"></kbd>
 
 - Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
 
@@ -66,7 +66,7 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-r
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab11-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab11-img02.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -76,7 +76,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab11-img03.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab11-img03.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -112,7 +112,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab11-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab11-img02.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -122,6 +122,6 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab11-img04.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab11-img04.png" width="80%" height="60%"></kbd>
 
 - Note: reviews:v2 generate load to ratings:v1 although nobody sends requests to him

@@ -19,9 +19,9 @@ https://<service-external-ip>:8084
 
 2. Let's start by checking if all traffic related to the emojivoto web deployment is managed with mTLS
 
-<img alt="linkerd" src="../images/linkerd-lab03-img02.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab03-img02.png" width="80%" height="60%"></kbd>
 
-<img alt="linkerd" src="../images/linkerd-lab04-img01.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab04-img01.png" width="80%" height="60%"></kbd>
 
 - Note: This can be easily checked in the edges section as shown above
 

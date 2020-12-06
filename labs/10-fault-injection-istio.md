@@ -30,13 +30,13 @@ http://<ingress-gateway-external-ip>/productpage
 
 - Note: to get the gateway-external-ip you can use the following command "kubectl get service istio-ingressgateway -n istio-system"
 
-<img alt="istio" src="../images/istio-lab10-img01.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img01.png" width="80%" height="60%"></kbd>
 
 ---
 
 4. Logout and reload the page. You will see reviews without error (the delay was introduced only for user jason)
 
-<img alt="istio" src="../images/istio-lab10-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img02.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -46,7 +46,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab10-img03.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img03.png" width="80%" height="60%"></kbd>
 
 - Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
 
@@ -74,13 +74,13 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-r
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab10-img04.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img04.png" width="80%" height="60%"></kbd>
 
 ---
 
 9. Logout and reload the page. You will see reviews without error (the delay was introduced only for user jason)
 
-<img alt="istio" src="../images/istio-lab10-img05.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img05.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -90,7 +90,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab10-img06.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img06.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -146,7 +146,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab10-img07.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img07.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -156,7 +156,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab10-img08.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img08.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -188,7 +188,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab10-img09.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img09.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -198,7 +198,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab10-img10.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab10-img10.png" width="80%" height="60%"></kbd>
 
 ---
 

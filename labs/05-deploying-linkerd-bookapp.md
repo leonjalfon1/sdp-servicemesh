@@ -55,13 +55,13 @@ kubectl get svc linkerd-web -n linkerd
 https://<service-external-ip>:8084
 ``` 
 
-<img alt="linkerd" src="../images/linkerd-lab05-img01.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab05-img01.png" width="80%" height="60%"></kbd>
 
 ---
 
 5. Let's use Linkerd to discover the root cause of this app's failures. Click on the webapp deployment for a live debugging session.
 
-<img alt="linkerd" src="../images/linkerd-lab05-img02.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab05-img02.png" width="80%" height="60%"></kbd>
 
 - Note: A failure in a dependent service may be exactly what’s causing the errors that webapp is returning. We can see that the books service is also failing.
 
@@ -69,7 +69,7 @@ https://<service-external-ip>:8084
 
 6. Let’s scroll a little further down the page, we’ll see a live list of all traffic endpoints that webapp is receiving.
 
-<img alt="linkerd" src="../images/linkerd-lab05-img03.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab05-img03.png" width="80%" height="60%"></kbd>
 
 - Notes: We can see that inbound traffic coming from the webapp service going to the books service is failing a significant percentage of the time. That could explain why webapp was throwing intermittent failures.
 
@@ -77,6 +77,6 @@ https://<service-external-ip>:8084
 
 7. Let’s click on the tap (🔬) icon and then on the Start button to look at the actual request and response stream. 
 
-<img alt="linkerd" src="../images/linkerd-lab05-img04.png" width="80%" height="60%">
+<kbd><img alt="linkerd" src="../images/linkerd-lab05-img04.png" width="80%" height="60%"></kbd>
 
 - Note: Indeed, many of these requests are returning 500’s. It was surprisingly easy to diagnose an intermittent issue that affected only a single route. You now have everything you need to open a detailed bug report explaining exactly what the root cause is.

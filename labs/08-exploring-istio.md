@@ -103,7 +103,7 @@ kubectl get svc kiali -n istio-system
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab08-img01.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img01.png" width="80%" height="60%"></kbd>
 
 - Note: it's accessible from HTTP only (no HTTPS)
 
@@ -113,7 +113,7 @@ http://<kiali-external-ip>:20001/kiali
 
 11. Browse to the "Graph" section and select the "default" namespace to visualize the application
 
-<img alt="istio" src="../images/istio-lab08-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img02.png" width="80%" height="60%"></kbd>
 
 - Note: Keep it open in your browser during the next labs to track the changes in the dashboard
 
@@ -131,7 +131,7 @@ while true; do curl -s -o /dev/null "http://<ingress-gateway-external-ip>/produc
 
 13. In the dashboard you will see how the traffic is routed 
 
-<img alt="istio" src="../images/istio-lab08-img03.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img03.png" width="80%" height="60%"></kbd>
 
 - Note: Click on the "Legend" button to see the left side menu
 
@@ -147,7 +147,7 @@ kubectl get svc prometheus -n istio-system
 http://<prometheus-external-ip>:9090
 ```
 
-<img alt="istio" src="../images/istio-lab08-img04.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img04.png" width="80%" height="60%"></kbd>
 
 - Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard prometheus"
 
@@ -159,7 +159,7 @@ http://<prometheus-external-ip>:9090
 sum(rate(istio_requests_total{reporter="source",source_workload="productpage-v1",destination_service_name="reviews"}[1m])) by (source_workload,source_version,destination_service_name,destination_workload,destination_version,request_protocol,response_code)
 ```
 
-<img alt="istio" src="../images/istio-lab08-img05.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img05.png" width="80%" height="60%"></kbd>
 
 - Note: istio_requests_total is a COUNTER that aggregates request totals between Kubernetes workloads, and groups them by response codes, response flags and security policy. This can be useful to compute the request rate (RPS) between different workloads. The query above computes the requests per second in the last hour between the productpage and the reviews services, and groups the results by response code and workload subsets
 
@@ -173,7 +173,7 @@ sum(rate(istio_requests_total{reporter="source",source_workload="productpage-v1"
 http://<prometheus-external-ip>:9090/targets
 ```
 
-<img alt="istio" src="../images/istio-lab08-img06.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img06.png" width="80%" height="60%"></kbd>
 
 - Note: As you can realize istio monitor your cluster automatically
 
@@ -189,9 +189,9 @@ kubectl get svc grafana -n istio-system
 http://<grafana-external-ip>:3000
 ```
 
-<img alt="istio" src="../images/istio-lab08-img07.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img07.png" width="80%" height="60%"></kbd>
 
-<img alt="istio" src="../images/istio-lab08-img08.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img08.png" width="80%" height="60%"></kbd>
 
 - Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard grafana"
 
@@ -201,7 +201,7 @@ http://<grafana-external-ip>:3000
 
 18. Let's explore the Istio Mesh Dashboard to get a general overview about or mesh
 
-<img alt="istio" src="../images/istio-lab08-img09.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img09.png" width="80%" height="60%"></kbd>
 
 - Note: This dashboard gives the global view of the Mesh along with services and workloads in the mesh. You can get more details about services and workloads by navigating to their specific dashboards as explained below.
 
@@ -211,7 +211,7 @@ http://<grafana-external-ip>:3000
 
 - Note: This dashboard gives details about metrics for the service and then client workloads (workloads that are calling this service) and service workloads (workloads that are providing this service) for that service
 
-<img alt="istio" src="../images/istio-lab08-img10.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img10.png" width="80%" height="60%"></kbd>
 
 - Note: An interesting example is the "reviews" service in which you can filter the metrics that provide from the "productpage-v1" and use the "ratings-v2" service
 
@@ -227,7 +227,7 @@ kubectl get svc tracing -n istio-system
 http://<tracing-external-ip>:80
 ```
 
-<img alt="istio" src="../images/istio-lab08-img11.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img11.png" width="80%" height="60%"></kbd>
 
 - Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard jaeger"
 
@@ -237,7 +237,7 @@ http://<tracing-external-ip>:80
 
 21. From the left-hand pane of the dashboard, select productpage.default from the Service drop-down list and click Find Traces
 
-<img alt="istio" src="../images/istio-lab08-img12.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img12.png" width="80%" height="60%"></kbd>
 
 - Note: you can add additional filters
 
@@ -245,7 +245,7 @@ http://<tracing-external-ip>:80
 
 22. Click on any trace to see the details corresponding to the request to the /productpage:
 
-<img alt="istio" src="../images/istio-lab08-img13.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab08-img13.png" width="80%" height="60%"></kbd>
 
 - Note: The trace is comprised of a set of spans, where each span corresponds to a Bookinfo service, invoked during the execution of a /productpage request, or internal Istio component, for example: istio-ingressgateway.
 

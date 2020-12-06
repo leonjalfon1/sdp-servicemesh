@@ -22,7 +22,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab09-img01.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab09-img01.png" width="80%" height="60%"></kbd>
 
 - Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
 
@@ -70,7 +70,7 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-a
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab09-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab09-img02.png" width="80%" height="60%"></kbd>
 
 --
 
@@ -80,7 +80,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab09-img03.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab09-img03.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -102,7 +102,7 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-r
 
 9. To test it, click Sign in from the top right corner of the page, and login using jason as user name with a blank password. You will only see reviews:v2 all the time. Others will see reviews:v1
 
-<img alt="istio" src="../images/istio-lab09-img04.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab09-img04.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -112,4 +112,4 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-r
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab09-img05.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab09-img05.png" width="80%" height="60%"></kbd>
