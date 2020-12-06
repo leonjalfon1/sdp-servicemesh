@@ -2,7 +2,7 @@
 
 ## Description
 
-In this lab we will ideploy the book info application and we will explore the observability tools (addons)
+In this lab we will deploy the book info application and we will explore the observability tools (addons)
 
 ## Instructions
 
