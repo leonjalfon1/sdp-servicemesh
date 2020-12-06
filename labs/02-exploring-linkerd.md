@@ -88,7 +88,7 @@ kubectl apply -f https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/m
 
 ---
 
-6. Before add Linkerd to the emojivoto app, let's ispect the configuration of the web service pod
+6. Before add Linkerd to the emojivoto app, let's inspect the configuration of the web service pod
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml
