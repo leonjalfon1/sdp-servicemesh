@@ -202,14 +202,6 @@ http://<kiali-external-ip>:20001/kiali
 
 ---
 
-17. Finally, remove the application routing rules
-
-```
-kubectl delete -f samples/bookinfo/networking/virtual-service-all-v1.yaml
-```
-
----
-
 In this task, you used Istio to set the request timeout for calls to the reviews microservice to half a second. By default the request timeout is disabled. Since the reviews service subsequently calls the ratings service when handling requests, you used Istio to inject a 2 second delay in calls to ratings to cause the reviews service to take longer than half a second to complete and consequently you could see the timeout in action.
 
 You observed that instead of displaying reviews, the Bookinfo product page (which calls the reviews service to populate the page) displayed the message: Sorry, product reviews are currently unavailable for this book. This was the result of it receiving the timeout error from the reviews service.
