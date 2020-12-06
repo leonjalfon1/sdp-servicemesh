@@ -32,7 +32,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab12-img01.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img01.png" width="80%" height="60%"></kbd>
 
 - Note: You should see "RBAC: access denied". The error shows that the configured deny-all policy is working as intended, and Istio doesn’t have any rules that allow any access to workloads in the mesh.
 
@@ -46,7 +46,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab12-img02.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img02.png" width="80%" height="60%"></kbd>
 
 - Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
 
@@ -82,7 +82,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab12-img03.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img03.png" width="80%" height="60%"></kbd>
 
 - Note: you should see the “Bookinfo Sample” page. However, you will see errors on the page
 
@@ -96,7 +96,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab12-img04.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img04.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -131,7 +131,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab12-img05.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img05.png" width="80%" height="60%"></kbd>
 
 - Note: this time you will see the book details (due the product page have access to it)
 
@@ -143,7 +143,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab12-img06.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img06.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -178,7 +178,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab12-img07.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img07.png" width="80%" height="60%"></kbd>
 
 - Note: this time you will see the book details and the reviews but reviews will still falling (this is because the reviews workload doesn’t have permission to access the ratings workload)
 
@@ -190,7 +190,7 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab12-img08.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img08.png" width="80%" height="60%"></kbd>
 
 ---
 
@@ -225,7 +225,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab12-img09.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img09.png" width="80%" height="60%"></kbd>
 
 - Note: this time everything should work well
 
@@ -237,4 +237,4 @@ http://<ingress-gateway-external-ip>/productpage
 http://<kiali-external-ip>:20001/kiali
 ```
 
-<img alt="istio" src="../images/istio-lab12-img10.png" width="80%" height="60%">
+<kbd><img alt="istio" src="../images/istio-lab12-img10.png" width="80%" height="60%"></kbd>
