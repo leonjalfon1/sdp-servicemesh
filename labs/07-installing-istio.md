@@ -71,6 +71,8 @@ istioctl x precheck
 istioctl install --set profile=demo -y
 ```
 
+- Note: The profiles provide customization of the Istio control plane and of the sidecars for the Istio data plane. For more info see: https://istio.io/latest/docs/setup/additional-setup/config-profiles/
+
 ---
 
 9. Verify that the services have been deployed using
@@ -106,10 +108,19 @@ istioctl verify-install -f $HOME/generated-manifest.yaml
 13. Install the istio addons for observability
 
 ```
-kubectl apply -f $HOME/istio-1.8.0/samples/addons 
+kubectl apply -f $HOME/istio-1.8.0/samples/addons/prometheus.yaml
+```
+```
+kubectl apply -f $HOME/istio-1.8.0/samples/addons/grafana.yaml
+```
+```
+kubectl apply -f $HOME/istio-1.8.0/samples/addons/jaeger.yaml
+```
+```
+kubectl apply -f $HOME/istio-1.8.0/samples/addons/kiali.yaml
 ```
 
-- Note: you may have to run the command above twice, sometimes it fail due to dependency issues
+- Note: you may have to run the kiali command above twice, it may fail due to dependency issues
 
 ---
 
