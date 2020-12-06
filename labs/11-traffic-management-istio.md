@@ -106,7 +106,7 @@ EOF
 
 ---
 
-7. Refresh your browser several times to ensure that you get reviews:v3 only
+10. Refresh your browser several times to ensure that you get reviews:v3 only
 
 ```
 http://<ingress-gateway-external-ip>/productpage
@@ -116,7 +116,7 @@ http://<ingress-gateway-external-ip>/productpage
 
 ---
 
-8. Let's see what happen in the dashboard, access it from the following url
+11. Let's see what happen in the dashboard, access it from the following url
 
 ```
 http://<kiali-external-ip>:20001/kiali
