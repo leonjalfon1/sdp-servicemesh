@@ -112,7 +112,7 @@ EOF
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-<img alt="istio" src="../images/istio-lab11-img03.png" width="80%" height="60%">
+<img alt="istio" src="../images/istio-lab11-img02.png" width="80%" height="60%">
 
 ---
 
