@@ -36,7 +36,11 @@ http://<ingress-gateway-external-ip>/productpage
 
 - Note: You should see "RBAC: access denied". The error shows that the configured deny-all policy is working as intended, and Istio doesn’t have any rules that allow any access to workloads in the mesh.
 
-- Note: to get the gateway-external-ip you can use the following command "kubectl get service istio-ingressgateway -n istio-system"
+- Note: to get the gateway-external-ip you can use the following command 
+
+```
+kubectl get service istio-ingressgateway -n istio-system
+```
 
 ---
 
@@ -48,7 +52,11 @@ http://<kiali-external-ip>:20001/kiali
 
 <kbd><img alt="istio" src="../images/istio-lab12-img02.png" width="80%" height="60%"></kbd>
 
-- Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
+- Note: to retrieve the kiali-external-ip you can use the following command
+
+```
+kubectl get svc kiali -n istio-system
+```
 
 ---
 

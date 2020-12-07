@@ -13,7 +13,7 @@ gcloud auth login
 1. Create the workstations
 
 ```
-NUMBER_OF_ATTENDEES=9
+NUMBER_OF_ATTENDEES=40
 ./create-workstations.sh ${NUMBER_OF_ATTENDEES}
 ```
 

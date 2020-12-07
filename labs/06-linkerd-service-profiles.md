@@ -21,6 +21,12 @@ curl -sL https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/reso
     2. Take the spec and convert it into a service profile by using the profile command.
     3. Apply this configuration to the cluster.
 
+- Note: to see the swagger spec run
+
+```
+curl https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp-webapp.swagger
+```
+
 ---
 
 2. Check out the profile that was generated
@@ -42,6 +48,16 @@ curl -sL https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/reso
 curl -sL https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp-books.swagger \
   | linkerd -n booksapp profile --open-api - books \
   | kubectl -n booksapp apply -f -
+```
+
+- Note: to see the swagger specs run
+
+```
+curl https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp-authors.swagger
+```
+
+```
+curl https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp-books.swagger
 ```
 
 ---

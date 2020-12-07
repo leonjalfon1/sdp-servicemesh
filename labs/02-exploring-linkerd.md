@@ -86,9 +86,15 @@ https://<service-external-ip>:8084
 kubectl apply -f https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/emojivoto-app.yaml
 ```
 
+- Note: to see the manifests run
+
+```
+curl https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/emojivoto-app.yaml
+```
+
 ---
 
-6. Before add Linkerd to the emojivoto app, let's inspect the configuration of the web service pod
+6. Before adding Linkerd to the emojivoto app, let's inspect the configuration of the web service pod
 
 ```
 kubectl -n emojivoto get pods -l app=web-svc -o yaml

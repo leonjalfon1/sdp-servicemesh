@@ -28,7 +28,11 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/virtual-service-r
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-- Note: to get the gateway-external-ip you can use the following command "kubectl get service istio-ingressgateway -n istio-system"
+- Note: to get the gateway-external-ip you can use the following command
+
+```
+kubectl get service istio-ingressgateway -n istio-system
+```
 
 <kbd><img alt="istio" src="../images/istio-lab10-img01.png" width="80%" height="60%"></kbd>
 
@@ -48,7 +52,11 @@ http://<kiali-external-ip>:20001/kiali
 
 <kbd><img alt="istio" src="../images/istio-lab10-img03.png" width="80%" height="60%"></kbd>
 
-- Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
+- Note: to retrieve the kiali-external-ip you can use the following command
+
+```
+kubectl get svc kiali -n istio-system
+```
 
 ---
 

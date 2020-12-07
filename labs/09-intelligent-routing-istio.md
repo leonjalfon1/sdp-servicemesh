@@ -12,7 +12,11 @@ In this lab we will route all the traffic to the reviews service only to version
 http://<ingress-gateway-external-ip>/productpage
 ```
 
-- Note: to get the gateway-external-ip you can use the following command "kubectl get service istio-ingressgateway -n istio-system"
+- Note: to get the gateway-external-ip you can use the following command 
+
+```
+kubectl get service istio-ingressgateway -n istio-system
+```
 
 --
 
@@ -24,7 +28,11 @@ http://<kiali-external-ip>:20001/kiali
 
 <kbd><img alt="istio" src="../images/istio-lab09-img01.png" width="80%" height="60%"></kbd>
 
-- Note: to retrieve the kiali-external-ip you can use the following command "kubectl get svc kiali -n istio-system"
+- Note: to retrieve the kiali-external-ip you can use the following command 
+
+```
+kubectl get svc kiali -n istio-system
+```
 
 - Note: Browse to the "Graph" section and select the "default" namespace to visualize the application
 

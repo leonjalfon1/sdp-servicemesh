@@ -12,7 +12,11 @@ In this lab we will deploy the book info application and we will explore the obs
 kubectl label namespace default istio-injection=enabled
 ```
 
-- Note: You can also manually inject the istio proxy using something like: "kubectl apply -f <(istioctl kube-inject -f ~/mypath/mymanifest.yaml)"
+- Note: You can also manually inject the istio proxy using something like: 
+
+```
+kubectl apply -f <(istioctl kube-inject -f ~/mypath/mymanifest.yaml)
+```
 
 ---
 
@@ -20,6 +24,12 @@ kubectl label namespace default istio-injection=enabled
 
 ```
 kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/platform/kube/bookinfo.yaml
+```
+
+- Note: to see the deployed manifests content use
+
+```
+cat $HOME/istio-1.8.0/samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
 ---
@@ -30,11 +40,11 @@ kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/platform/kube/bookinfo.yaml
 kubectl -n default get all
 ```
 
+- Note: Wait until all pods report READY 2/2 and STATUS Running before you go to the next step
+
 ```
 kubectl -n default get pods --watch
 ```
-
-- Note: Wait until all pods report READY 2/2 and STATUS Running before you go to the next step
 
 ---
 
@@ -44,7 +54,11 @@ kubectl -n default get pods --watch
 kubectl apply -f $HOME/istio-1.8.0/samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
 
-- Note: To see the manifests you can run "cat $HOME/istio-1.8.0/samples/bookinfo/networking/bookinfo-gateway.yaml"
+- Note: To see the manifests you can run 
+
+```
+cat $HOME/istio-1.8.0/samples/bookinfo/networking/bookinfo-gateway.yaml
+```
 
 ---
 
@@ -125,7 +139,11 @@ http://<kiali-external-ip>:20001/kiali
 while true; do curl -s -o /dev/null "http://<ingress-gateway-external-ip>/productpage"; done
 ```
 
-- Note: To retrieve the "ingress-gateway-external-ip" you can use "kubectl get service istio-ingressgateway -n istio-system"
+- Note: To retrieve the "ingress-gateway-external-ip" you can use 
+
+```
+kubectl get service istio-ingressgateway -n istio-system
+```
 
 ---
 
@@ -149,7 +167,11 @@ http://<prometheus-external-ip>:9090
 
 <kbd><img alt="istio" src="../images/istio-lab08-img04.png" width="80%" height="60%"></kbd>
 
-- Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard prometheus"
+- Note: If we were not working through the workstation you could access directly using the command 
+
+```
+istioctl dashboard prometheus
+```
 
 ---
 
@@ -193,7 +215,11 @@ http://<grafana-external-ip>:3000
 
 <kbd><img alt="istio" src="../images/istio-lab08-img08.png" width="80%" height="60%"></kbd>
 
-- Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard grafana"
+- Note: If we were not working through the workstation you could access directly using the command 
+
+```
+istioctl dashboard grafana
+```
 
 - Note: Feel free to explore by your own before you go to the next step
 
@@ -229,7 +255,11 @@ http://<tracing-external-ip>:80
 
 <kbd><img alt="istio" src="../images/istio-lab08-img11.png" width="80%" height="60%"></kbd>
 
-- Note: If we were not working through the workstation you could access directly using the command "istioctl dashboard jaeger"
+- Note: If we were not working through the workstation you could access directly using the command
+
+```
+istioctl dashboard jaeger
+```
 
 - Note: Feel free to explore by your own before you go to the next step
 

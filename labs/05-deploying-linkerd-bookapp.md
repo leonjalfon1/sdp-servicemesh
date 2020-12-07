@@ -29,6 +29,13 @@ EOF
 kubectl -n booksapp apply -f https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp.yaml
 ```
 
+- Note: to see the application manifests see
+
+```
+curl https://raw.githubusercontent.com/leonjalfon1/sdp-servicemesh/main/resources/booksapp.yaml
+```
+
+
 - Note: The linkerd proxies will be automatically injected
 
 ---
