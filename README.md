@@ -37,7 +37,7 @@ For more information visit: http://www.seladeveloperpractice.com/
 
 ## Lab Infrastructure
 
-I provided a GKE cluster for each attendee during the event, however you can use any kubernetes cluster that support linkerd and istio
+I provided a EKS cluster for each attendee during the event, however you can use any kubernetes cluster that support linkerd and istio
 
 ## Hands-On Labs
 
